@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
-import { AppRoutingModule } from './app-routing.module';
+import { RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { PhotogalleryComponent } from './photogallery/photogallery.component';
@@ -19,6 +18,7 @@ import { LoginComponent } from './login/login.component';
 import { SuccessComponent } from './success/success.component';
 import { FormsModule,  ReactiveFormsModule } from '@angular/forms';
 import { RegistrationComponent } from './registration/registration.component';
+import { AuthService } from './auth.service';
 @NgModule({
   declarations: [
     AppComponent,
@@ -30,23 +30,39 @@ import { RegistrationComponent } from './registration/registration.component';
     HomeComponent,
     LoginComponent,
    SuccessComponent,
-   RegistrationComponent
+   RegistrationComponent,
+  
 
 
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
+    
     //MatIconModule,
    // BrowserAnimationsModule,
     CarouselModule.forRoot(),
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    RouterModule.forRoot([
+      { path: '', component: LoginComponent },
+      { path: 'success', component: SuccessComponent },
+      {path:'about-us',component: AboutusComponent},
+      {path:'photo-gallery',component: PhotogalleryComponent},
+      {path:'osa',component: OSAComponent},
+      {path:'latestnews',component: LatestNewsComponent },
+      {path:'home',component: HomeComponent },
+      {path:'login',component: LoginComponent },
+      {path:'success',component: SuccessComponent },
+     
+
+
+    ])
+  ],
    
   
-  ],
-  
-  providers: [],
+ 
+  providers: [AuthService],
+
   bootstrap: [AppComponent]
 })
 export class AppModule { }
