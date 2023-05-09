@@ -1,56 +1,7 @@
-/******* Bootstrap Theming ********/
-/*!
- * Bootstrap v4.5.3 (https://getbootstrap.com/)
- * Copyright 2011-2020 The Bootstrap Authors
- * Copyright 2011-2020 Twitter, Inc.
- * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
- */
-html {
-  font-family: sans-serif;
-  line-height: 1.15;
-  -webkit-text-size-adjust: 100%;
-  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-}
-body {
-  margin: 0;
-  font-family: "Nunito", sans-serif;
-  font-size: 1rem;
-  font-weight: 400;
-  line-height: 1.5;
-  color: #666666;
-  text-align: left;
-  background-color: #fff;
-}
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,500,300,700);
 
-a {
-  color: #17a2b8;
-  text-decoration: none;
-  background-color: transparent;
-}
-
-a:hover {
-  color: #0f6674;
-  text-decoration: underline;
-}
-
-.btn {
-  border-radius: 30px;
-  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
-}
-
-.btn-primary {
-  color: #fff;
-  background-color: #17a2b8;
-  border-color: #17a2b8;
-}
-
-.back-to-top {
-  position: fixed;
-  display: none;
-  right: 30px;
-  bottom: 30px;
-  z-index: 11;
-  animation: action 1s infinite alternate;
+* {
+  font-family: Roboto;
 }
 
 .footer-distributed{
@@ -64,12 +15,27 @@ a:hover {
 	overflow: hidden;
 	height:600px;
 }
+
+section {
+  width: 100%;
+  display: inline-block;
+  background: #ccc;
+  height: 0vh;
+  text-align: center;
+  font-size: 22px;
+  font-weight: 700;
+  text-decoration: underline;
+}
+
+
 /* Footer left */
+
 .footer-distributed .footer-left{
 	float: left;
 }
 
 /* The company logo */
+
 .footer-distributed h3{
 	color:  #ffffff;
 	font: normal 36px 'Roboto', cursive;
@@ -79,7 +45,9 @@ a:hover {
 .footer-distributed h3 span{
 	color:  #5383d3;
 }
+
 /* Footer links */
+
 .footer-distributed .footer-links{
 	color:  #ffffff;
 	margin: 0 0 10px;
@@ -99,15 +67,44 @@ a:hover {
 	font-weight: normal;
 	margin: 0;
 }
+
 /* Footer social icons */
+
 .footer-distributed .footer-icons{
 	margin-top: 40px;
 	margin-right: 50px;
 }
 
+.footer-distributed .footer-icons a{
+	display: inline-block;
+	width: 35px;
+	height: 35px;
+	cursor: pointer;
+	background-color:  black;
+	border-radius: 2px;
+
+	font-size: 20px;
+	color: #ffffff;
+	text-align: center;
+	line-height: 35px;
+	
+	margin-right: 5px;
+	margin-bottom: 5px;
+}
+
+/* Footer Right */
+/* .footer-distributed .footer-center{
+	float:center;
+
+}
+.footer-distributed .footer-center p{
+
+} */
+
 .footer-distributed .footer-right{
 	float: right;
 }
+
 
 .footer-distributed .footer-right p{
 	display: inline-block;
@@ -117,6 +114,7 @@ a:hover {
 }
 
 /* The contact form */
+
 .footer-distributed form{
 	display: inline-block;
 }
@@ -130,13 +128,29 @@ a:hover {
 	box-shadow: 0 1px 0 0 rgba(255, 255, 255, 0.1);
 	border: none;
 	resize: none;
-font: inherit;
+
+	font: inherit;
 	font-size: 14px;
 	font-weight: normal;
 	color:  #d1d2d2;
-  width: 400px;
+
+	width: 400px;
 	padding: 18px;
 }
+
+.footer-distributed ::-webkit-input-placeholder {
+	color:  #5c666b;
+}
+
+.footer-distributed ::-moz-placeholder {
+	color:  #5c666b;
+	opacity: 1;
+}
+
+.footer-distributed :-ms-input-placeholder{
+	color:  #5c666b;
+}
+
 
 .footer-distributed form input{
 	height: 55px;
@@ -147,7 +161,19 @@ font: inherit;
 	height: 100px;
 	margin-bottom: 20px;
 }
+
+.footer-distributed form button{
+	border-radius: 3px;
+	background-color:  #33383b;
+	color: #ffffff;
+	border: 0;
+	padding: 15px 50px;
+	font-weight: bold;
+	float: right;
+}
+
 /* If you don't want the footer to be responsive, remove these media queries */
+
 @media (max-width: 1000px) {
 
 	.footer-distributed {
