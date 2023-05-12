@@ -1,0 +1,10 @@
+<Marquee><p>Welcome</p></Marquee>
+
+
+    <div *ngIf="getuser">
+      <h2>User Details</h2>
+      <p><strong>Name:</strong> {{ getuser.name }}</p>
+      <p><strong>Email:</strong> {{ getuser.email }}</p>
+      <p><strong>Address:</strong> {{ getuser.address }}</p>
+      <p><strong>Phone Number:</strong> {{ getuser.phonenumber }}</p>
+    </div>

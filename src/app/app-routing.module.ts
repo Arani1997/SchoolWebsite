@@ -8,6 +8,8 @@ import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { SuccessComponent } from './success/success.component';
 import { RegistrationComponent } from './registration/registration.component';
+import { ProfileComponent } from './profile/profile.component';
+import { AdminadduserComponent } from './adminadduser/adminadduser.component';
 
 const routes: Routes = [
   {path:'',component: HomeComponent },
@@ -19,6 +21,8 @@ const routes: Routes = [
   {path:'login',component: LoginComponent },
   {path:'success',component: SuccessComponent },
   {path:'register',component:RegistrationComponent},
+  {path:'profile',component:ProfileComponent},
+  {path:'adminadduser',component:AdminadduserComponent},
 ];
 
 @NgModule({

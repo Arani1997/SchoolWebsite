@@ -3,7 +3,10 @@ import { Injectable } from '@angular/core';
 @Injectable({
   providedIn: 'root'
 })
-export class LoginRegisterResetForgotService {
-
+export class SharedService {
+  username!: string;
+  regno!: string;
   constructor() { }
+ 
+
 }

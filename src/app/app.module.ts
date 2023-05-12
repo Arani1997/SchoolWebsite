@@ -19,6 +19,12 @@ import { SuccessComponent } from './success/success.component';
 import { FormsModule,  ReactiveFormsModule } from '@angular/forms';
 import { RegistrationComponent } from './registration/registration.component';
 import { AuthService } from './auth.service';
+import { AppRoutingModule } from './app-routing.module';
+import { ProfileComponent } from './profile/profile.component';
+import { AdminadduserComponent } from './adminadduser/adminadduser.component';
+//import { AdminviewdetailsComponent } from './adminviewdetails/adminviewdetails.component';
+import { AdmindashboardComponent } from './admindashboard/admindashboard.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -31,6 +37,11 @@ import { AuthService } from './auth.service';
     LoginComponent,
    SuccessComponent,
    RegistrationComponent,
+   ProfileComponent,
+   AdminadduserComponent,
+  // AdminviewdetailsComponent,
+   AdmindashboardComponent,
+ 
   
 
 
@@ -43,20 +54,7 @@ import { AuthService } from './auth.service';
     CarouselModule.forRoot(),
     FormsModule,
     ReactiveFormsModule,
-    RouterModule.forRoot([
-      { path: '', component: LoginComponent },
-      { path: 'success', component: SuccessComponent },
-      {path:'about-us',component: AboutusComponent},
-      {path:'photo-gallery',component: PhotogalleryComponent},
-      {path:'osa',component: OSAComponent},
-      {path:'latestnews',component: LatestNewsComponent },
-      {path:'home',component: HomeComponent },
-      {path:'login',component: LoginComponent },
-      {path:'success',component: SuccessComponent },
-     
-
-
-    ])
+AppRoutingModule
   ],
    
   

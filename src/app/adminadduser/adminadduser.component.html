@@ -1,0 +1,52 @@
+<div class="sign-forget-htm">
+<div class="container">  
+    <form [formGroup]="studentform" (ngSubmit)="Submit()">
+      <h3>Add student</h3>
+      <div class="stu-reg">
+        <div class="group">
+            <label class="label">Registration No</label>
+            <input  type="text" class="input"  formControlName="regno">
+          
+        </div>
+      <div class="group">
+        <label class="label">Username</label>
+        <input  type="text" class="input"  formControlName="name">
+      
+    </div>
+    <div class="group">
+        <label class="label">Email</label>
+        <input  type="email" class="input" formControlName="email">
+       
+    </div>
+    <div class="group">
+        <label class="label">Address</label>
+        <input type="text" class="input"  formControlName="address">
+        
+    </div>
+    <div class="group">
+        <label class="label">PhoneNumber</label>
+        <input type="text" class="input" formControlName="phonenumber">
+      
+    </div>
+    <div class="group">
+        <label for="pass" class="label">Father Name</label>
+        <input type="text" class="input" data-type="password" formControlName="fathername">
+      
+    </div>
+    <div class="group">
+        <label  class="label">Mother Name</label>
+        <input type="text" class="input"  formControlName="mothername">
+       
+    </div>
+    <div class="group">
+        <label  class="label">Parent Phone Number</label>
+        <input type="text" class="input" formControlName="parentphonenumber">
+       
+    </div>
+    <div class="group">
+        <input type="submit" class="button" value="Submit">
+    </div>
+	</div>
+  
+    </form>
+  </div>

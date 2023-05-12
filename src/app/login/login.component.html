@@ -2,26 +2,37 @@
 	<div class="login-html">
 		<input id="tab-1" type="radio" name="tab" class="sign-in" checked><label for="tab-1" class="tab">Sign In</label>
 		<input id="tab-2" type="radio" name="tab" class="sign-up"><label for="tab-2" class="tab">Sign Up</label>
-	
+			
+		<input id="tab-3" type="radio" name="tab" class="sign-forget"><label for="tab-3" class="tab">Forgot Password</label>
+		<input id="tab-4" type="radio" name="tab" class="sign-reset"><label for="tab-4" class="tab">Reset Password</label>
 	 <!-- <input id="tab-3" type="radio" name="tab" class="forgot"><label for="tab-3" class="tab">Forgot Password</label> -->
 		<div class="login-form">
 			<form [formGroup]="form" (ngSubmit)="onSubmit()">
 			<div class="sign-in-htm">
 				<div class="group">
 					<label for="user" class="label">Username</label>
-					<input id="username" type="text" class="input"  formControlName="username">
-					<div *ngIf="f.username.touched && f.username.invalid" class="alert alert-danger">
+					<input  type="text" class="input"  formControlName="username">
+					<div *ngIf="f.username?.touched && f.username.invalid" class="alert alert-danger">
 						<div *ngIf="f.username && f.username.errors?.required">User Name is required.</div>
 						<!-- <div *ngIf="f.name && f.name.errors.minlength">Name should be 3 character.</div> -->
-					</div>
+				</div>
 				</div>
 				<div class="group">
 					<label for="pass" class="label">Password</label>
-					<input id="password" type="password" class="input" data-type="password" formControlName="password">
-					<div *ngIf="f.password.touched && f.password.invalid" class="alert alert-danger">
+					<input  type="password" class="input" data-type="password" formControlName="password">
+					<div *ngIf="f.password?.touched && f.password.invalid" class="alert alert-danger">
 						<div *ngIf="f.password.errors?.required">Password is required.</div>
 						</div>
 				</div>
+				<div class="group">
+					<label for="user" class="label">Email</label>
+					<input  type="text" class="input"  formControlName="email">
+					<div *ngIf="f.email.touched && f.email.invalid" class="alert alert-danger">
+						<div *ngIf="f.email && f.email.errors?.required">User Name is required.</div>
+						
+					</div>
+				</div>
+				
 				<div class="group">
 					<input id="check" type="checkbox" class="check" checked>
 					<label for="check"><span class="icon"></span> Keep me Signed in</label>
@@ -38,9 +49,17 @@
 			</form>
 	<form [formGroup]="form1" (ngSubmit)="Submit()">	
     	<div class="sign-up-htm">
+			<div class="group">
+				<label for="user" class="label">RegNo</label>
+				<input  type="text" class="input"  formControlName="regno">
+				<div *ngIf="f2.username2?.touched && f2.username2.invalid" class="alert alert-danger">
+					<div *ngIf="f2.username2 && f2.username2.errors?.required">User Name is required.</div>
+				
+				</div>
+			</div>
         	<div class="group">
             <label for="user" class="label">Username</label>
-            <input id="username1" type="text" class="input" formControlName="username1" >
+            <input  type="text" class="input" formControlName="username1" >
             <div *ngIf="f1.username1.touched && f1.username1.invalid" class="alert alert-danger">
                 <div *ngIf="f1.username1.errors?.required">Name is required.</div>
                 <div *ngIf="f1.username1.errors?.minlength">Name should be 3 character.</div>
@@ -48,7 +67,7 @@
         </div>
         <div class="group">
             <label for="pass" class="label">Password</label>
-            <input id="regpassword" type="password" class="input" data-type="password" formControlName="regpassword">
+            <input  type="password" class="input" data-type="password" formControlName="regpassword">
 			<div *ngIf="f1.regpassword.touched && f1.regpassword.invalid" class="alert alert-danger">
 				<div *ngIf="f1.regpassword.errors?.required">Password is required.</div>
 				<div *ngIf="f1.regpassword.errors?.minlength">Password must contain atleast 8 characters.</div>
@@ -60,8 +79,8 @@
         </div>
         <div class="group">
             <label for="pass" class="label">Email Address</label>
-            <input id="email" type="email" class="input" formControlName="confirmpassword">
-			<div *ngIf="f1.email.touched && f.email.invalid" class="alert alert-danger">
+            <input type="text" class="input" formControlName="email">
+			<div *ngIf="f1.email.touched && f1.email.invalid" class="alert alert-danger">
 				<div *ngIf="f1.email && f1.email.errors?.required">User Name is required.</div>
 				<div *ngIf="f1.email && f1.email.errors?.email">User Name is required.</div>
 				<!-- <div *ngIf="f.name && f.name.errors.minlength">Name should be 3 character.</div> -->
@@ -77,13 +96,74 @@
         </div>
     	</div>
 	</form>
-	<!-- <div class="forgot-htm">
-		<div class="group">
-			<label for="user" class="label">Email</label>
-			<input id="email" type="email" class="input" formControlName="email" >
-			<button type="submit">Reset Password</button>
-		</div>
-    </div> -->
+	<form  [formGroup]="form2" (ngSubmit)="submitForm()">	
+    	<div class="sign-forget-htm">
+			
+			<div class="group">
+				<label for="user" class="label">Username</label>
+				<input  type="text" class="input"  formControlName="username2">
+				<div *ngIf="f2.username2?.touched && f2.username2.invalid" class="alert alert-danger">
+					<div *ngIf="f2.username2 && f2.username2.errors?.required">User Name is required.</div>
+				
+				</div>
+			</div>
+			<div class="group">
+				<label for="pass" class="label">New Password</label>
+				<input  type="password" class="input" data-type="password" formControlName="newpassword">
+				<div *ngIf="f2.newpassword?.touched && f2.newpassword.invalid" class="alert alert-danger">
+					<div *ngIf="f2.newpassword.errors?.required">Password is required.</div>
+					</div>
+			</div>
+			<div class="group">
+				<label for="pass" class="label">Confirm Password</label>
+				<input type="password" class="input" data-type="password" formControlName="confirmnewpassword">
+				<div *ngIf="f2.confirmnewpassword?.touched && f2.confirmnewpassword.invalid" class="alert alert-danger">
+					<div *ngIf="f2.confirmnewpassword.errors?.required">Password is required.</div>
+					</div>
+			</div>
+			<div class="group">
+				<input type="submit" class="button" value="Submit">
+			</div>
+      
+    	</div>
+	</form>
+	<form  [formGroup]="form3" (ngSubmit)="ChangePasswordForm()" >	
+    	<div class="sign-reset-htm">
+			<div class="group">
+				<label for="user" class="label">Username</label>
+				<input  type="text" class="input"  formControlName="username3">
+				<div *ngIf="f3.username3?.touched && f3.username3.invalid" class="alert alert-danger">
+					<div *ngIf="f3.username3 && f3.username3.errors?.required">User Name is required.</div>
+				
+				</div>
+			</div>
+			<div class="group">
+				<label for="pass" class="label">Old Password</label>
+				<input  type="password" class="input" data-type="password" formControlName="oldpassword">
+				<div *ngIf="f3.oldpassword?.touched && f3.oldpassword.invalid" class="alert alert-danger">
+					<div *ngIf="f3.oldpassword.errors?.required">Password is required.</div>
+					</div>
+			</div>
+			<div class="group">
+				<label for="pass" class="label">New Password</label>
+				<input type="password" class="input" data-type="password" formControlName="resetnewpassword">
+				<div *ngIf="f3.resetnewpassword?.touched && f3.resetnewpassword.invalid" class="alert alert-danger">
+					<div *ngIf="f3.resetnewpassword.errors?.required">Password is required.</div>
+					</div>
+			</div>
+			<div class="group">
+				<label for="pass" class="label">Confirm Password</label>
+				<input type="password" class="input" data-type="password" formControlName="resetconfirmpassword">
+				<div *ngIf="f3.resetconfirmpassword?.touched && f3.resetconfirmpassword.invalid" class="alert alert-danger">
+					<div *ngIf="f3.resetconfirmpassword.errors?.required">Password is required.</div>
+					</div>
+			</div>
+			<div class="group">
+				<input type="submit" class="button" value="Submit">
+			</div>
+      
+    	</div>
+	</form>
 
 		</div>
 	</div>
