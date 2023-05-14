@@ -39,7 +39,7 @@
                     <a routerLink="/latestnews" routerLinkActive="active" ariaCurrentWhenActive="page" style="margin-left:15px">LatestNews</a>
                     <a routerLink="/login" routerLinkActive="active" *ngIf="!isLoggedIn" ariaCurrentWhenActive="page" style="margin-left:15px">Login</a>
                    <a routerLink="/profile" routerLinkActive="active" *ngIf="isLoggedIn" ariaCurrentWhenActive="page" style="margin-left:15px">Profile</a>
-                   <a routerLink="/adminadduser" routerLinkActive="active" *ngIf="isLoggedIn && isadminLogged" ariaCurrentWhenActive="page" style="margin-left:15px">Setting</a>
+                   <a routerLink="/admindashboard" routerLinkActive="active" *ngIf="isLoggedIn && isadminLogged" ariaCurrentWhenActive="page" style="margin-left:15px">Setting</a>
                    <a routerLink="/logout" routerLinkActive="active" *ngIf="isLoggedIn" ariaCurrentWhenActive="page" style="margin-left:15px" (click)="logout()">Logout</a>
                 </div>
                

@@ -4,7 +4,8 @@ export interface Student {
     email : string;
     address:string;
     phonenumber:number;
-    fatherName: string;
-    motherName: string;
+    fathername: string;
+    mothername: string;
     parentPhonenumber:number;
     };
+   

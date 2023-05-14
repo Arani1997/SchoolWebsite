@@ -14,7 +14,7 @@ export class LoginComponent {
     form = new FormGroup({
     username: new FormControl('', [Validators.required, Validators.minLength(3)]),
     password: new FormControl('', [Validators.required, Validators.minLength(3)]),
-    email: new FormControl('', [Validators.required, Validators.minLength(3)]),
+   
     });
 
     form1 = new FormGroup({
@@ -46,8 +46,8 @@ export class LoginComponent {
   onSubmit() {
     const username = this.form.controls.username.value;
     const password = this.form.controls.password.value;
-    const email = this.form.controls.email.value;
-       this.authService.authenticate(username,password,email);
+   
+       this.authService.authenticate(username,password);
       this.authService._jsonData$.subscribe((data) => {
       this.users = data;
    this.sharedService.username = username;

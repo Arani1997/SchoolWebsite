@@ -12,13 +12,13 @@ export class AdminauthService {
   // public getMySubject() {
   //   return this._jsonstudentData$;
   // }
-  public addStudent(regno:string,username: string,email: string,address:string, phonenumber:number,fatherName: string, motherName: string,parentPhonenumber:number) {
+  // public addStudent(regno:string,name: string,email: string,address:string, phonenumber:number,fathername: string, mothername: string,parentPhonenumber:number) {
     
    
-    let existingData = this._jsonstudentData$.getValue();
-    existingData.push(<Student>{regno:regno,name: username, email:email, address: address,phonenumber:phonenumber, fatherName: fatherName, motherName: motherName,parentPhonenumber:parentPhonenumber});
-    this._jsonstudentData$.next(existingData);
-   // this.router.navigate(['/home']);
+  //   let existingData = this._jsonstudentData$.getValue();
+  //   existingData.push(<Student>{regno:regno,name:name, email:email, address: address,phonenumber:phonenumber, fatherName: fathername, motherName: mothername,parentPhonenumber:parentPhonenumber});
+  //   this._jsonstudentData$.next(existingData);
+  //  // this.router.navigate(['/home']);
     
-  }
+  // }
 }

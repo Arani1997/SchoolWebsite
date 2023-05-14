@@ -24,6 +24,8 @@ import { ProfileComponent } from './profile/profile.component';
 import { AdminadduserComponent } from './adminadduser/adminadduser.component';
 //import { AdminviewdetailsComponent } from './adminviewdetails/adminviewdetails.component';
 import { AdmindashboardComponent } from './admindashboard/admindashboard.component';
+import { AdminviewdetailsComponent } from './adminviewdetails/adminviewdetails.component';
+import { AdmineditstudentComponent } from './admineditstudent/admineditstudent.component';
 
 @NgModule({
   declarations: [
@@ -41,6 +43,8 @@ import { AdmindashboardComponent } from './admindashboard/admindashboard.compone
    AdminadduserComponent,
   // AdminviewdetailsComponent,
    AdmindashboardComponent,
+  AdminviewdetailsComponent,
+  AdmineditstudentComponent,
  
   
 

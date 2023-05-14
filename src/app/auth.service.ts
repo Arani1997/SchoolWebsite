@@ -10,8 +10,14 @@ import { AdminauthService} from './adminauth.service';
 export class AuthService {
   [x: string]: any;
 
-  // _jsonData$:any=[{
-  //   "username": "John",
+
+  _jsonstudentData$: BehaviorSubject<Array<Student>> = new BehaviorSubject<Array<Student>>([]);
+  Dataa = this._jsonstudentData$.asObservable();
+   _jsonData$: BehaviorSubject<Array<User>> = new BehaviorSubject<Array<User>>([]);
+
+
+  // _jsonData$=[{
+  //   "userName": "John",
   //   "password":"1884a"
 
   // },{
@@ -24,11 +30,6 @@ export class AuthService {
   //   "password":"1886c"
 
   // }]
-  _jsonstudentData$: BehaviorSubject<Array<Student>> = new BehaviorSubject<Array<Student>>([]);
-  Dataa = this._jsonstudentData$.asObservable();
-
-
-  _jsonData$: BehaviorSubject<Array<User>> = new BehaviorSubject<Array<User>>([]);
   isAuthenticated = new BehaviorSubject<boolean>(false);
   Authenticated = this.isAuthenticated.asObservable();
 
@@ -40,14 +41,14 @@ static userData:any[]=[];
  //Data1: any;
 
 
-  constructor(private router: Router,private adminauthService: AdminauthService) {
+  constructor(private router: Router) {
     console.log(this._jsonData$.subscribe(d=>d))
    }
-  public authenticate(username: string, password: string, email: string) {
+  public authenticate(username: string, password: string) {
     let existingData = this._jsonData$.getValue();
     //let data = [...existingData, { userName: username, password: password, email: email }];
     let user =existingData.find((item: { userName: any; }) => item.userName.toLowerCase() === username.toLowerCase());
-    if (username.toLowerCase() === 'admin' && password === 'password' && email === 'admin@gmail.com'){
+    if (username.toLowerCase() === 'admin' && password === 'password'){
       this.isAuthenticated.next(true);
      // AuthService.isAuthenticated=true
       this.IsadminLogged.next(true);
@@ -133,11 +134,11 @@ static userData:any[]=[];
       alert('You cannot register');
     }
 }
-  public addStudent(regno:string,username: string,email: string,address:string, phonenumber:number,fatherName: string, motherName: string,parentPhonenumber:number) {
+  public addStudent(regno:string,name: string,email: string,address:string, phonenumber:number,fathername: string, mothername: string,parentPhonenumber:number) {
     let existingData = this._jsonstudentData$.getValue();
-    existingData.push(<Student>{regno:regno,name: username, email:email, address: address,phonenumber:phonenumber, fatherName: fatherName, motherName: motherName,parentPhonenumber:parentPhonenumber});
+    existingData.push(<Student>{regno:regno,name: name, email:email, address: address,phonenumber:phonenumber, fathername: fathername, mothername: mothername,parentPhonenumber:parentPhonenumber});
     this._jsonstudentData$.next(existingData);
-   // this.router.navigate(['/home']);
+   this.router.navigate(['../admindashboard']);
     }
   public logout() {
     this.isAuthenticated.next(false);
@@ -155,8 +156,42 @@ static userData:any[]=[];
     }
     return studentDetail;
  }
+ public adminViewDetails(){
+  const existingData = this._jsonstudentData$.getValue();
+  this._jsonstudentData$.next(existingData);
+  return existingData;
+}
+
+getStudent() {
+ console.log('Existing data:', this._jsonData$.getValue());
+ const a=this._jsonstudentData$.getValue();
+ this._jsonstudentData$.next(a);
+  return a;
+  }
+  
+  public updateStudentDetails(regno: string, name: string, email: string, address: string, phonenumber: number, fathername: string, mothername: string, parentPhonenumber: number) {
+   const students = this._jsonstudentData$.getValue(); // get the list of students
+   this._jsonstudentData$.next(students);
+    const index = students.findIndex((student: Student) => student.regno === regno); // find the index of the student with the given regno
+    if (index !== -1) { // if the student is found
+      const updatedStudent: Student = { regno, name, email, address, phonenumber, fathername, mothername, parentPhonenumber };
+      students[index] = updatedStudent; // update the student at the given index
+      this._jsonstudentData$.next(students); // emit the updated list of students
+      console.log( updatedStudent);
+      //window.location.href = '/adminview';
+      alert('Update successful');
+      this.router.navigate(['/adminview']);
+      return true; // return true to indicate success
+    }
+    return false; // return false to indicate failure
+  }
+  
+  
+}
+
+
 
  
-}
+
 
  

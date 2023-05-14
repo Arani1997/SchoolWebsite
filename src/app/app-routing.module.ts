@@ -10,6 +10,10 @@ import { SuccessComponent } from './success/success.component';
 import { RegistrationComponent } from './registration/registration.component';
 import { ProfileComponent } from './profile/profile.component';
 import { AdminadduserComponent } from './adminadduser/adminadduser.component';
+import { AdmindashboardComponent } from './admindashboard/admindashboard.component';
+import { AdminviewdetailsComponent } from './adminviewdetails/adminviewdetails.component';
+import { AdmineditstudentComponent } from './admineditstudent/admineditstudent.component';
+
 
 const routes: Routes = [
   {path:'',component: HomeComponent },
@@ -23,6 +27,10 @@ const routes: Routes = [
   {path:'register',component:RegistrationComponent},
   {path:'profile',component:ProfileComponent},
   {path:'adminadduser',component:AdminadduserComponent},
+  {path:'admindashboard',component:AdmindashboardComponent},
+  {path:'adminview',component:AdminviewdetailsComponent},
+  {path:'adminedit/:regno',component:AdmineditstudentComponent},
+
 ];
 
 @NgModule({
